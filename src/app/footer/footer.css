@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&display=swap');
+
+/* Top Light CTA Banner */
+.cta-banner {
+  background-color: #f4f2ee;
+  border-bottom: 1px solid #e2ddd5;
+}
+
+.cta-title {
+  font-family: 'Cinzel', serif;
+  font-size: 2.2rem;
+  color: #1c2738;
+  letter-spacing: 1.2px;
+  line-height: 1.3;
+}
+
+.cta-subtitle {
+  color: #666666;
+  font-size: 0.92rem;
+  max-width: 520px;
+  line-height: 1.6;
+}
+
+.cta-btn {
+  background-color: #1c2738;
+  color: #ffffff;
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 2px;
+  padding: 12px 28px;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.cta-btn:hover {
+  background-color: #a48650;
+  color: #ffffff;
+}
+
+/* Main Dark Footer Container */
+.main-footer {
+  background-color: #1c1a18; /* Dark luxury charcoal from reference */
+  color: #a8a29e;
+}
+
+.footer-brand {
+  font-family: 'Cinzel', serif;
+  font-size: 1.5rem;
+  letter-spacing: 3px;
+  color: #ffffff;
+}
+
+.brand-desc {
+  font-size: 0.85rem;
+  line-height: 1.7;
+  color: #a8a29e;
+}
+
+.footer-heading {
+  font-family: 'Cinzel', serif;
+  font-size: 0.85rem;
+  letter-spacing: 1.5px;
+  color: #ffffff;
+  text-transform: uppercase;
+}
+
+.footer-links li {
+  margin-bottom: 10px;
+}
+
+.footer-links a {
+  color: #a8a29e;
+  text-decoration: none;
+  font-size: 0.85rem;
+  transition: color 0.25s ease;
+}
+
+.footer-links a:hover {
+  color: #a48650;
+}
+
+.footer-contact {
+  font-style: normal;
+  font-size: 0.85rem;
+  line-height: 1.6;
+  color: #a8a29e;
+}
+
+.footer-bottom {
+  font-size: 0.78rem;
+}
+
+.copyright {
+  color: #78716c;
+}
+
+.legal-links a {
+  color: #78716c;
+  text-decoration: none;
+  transition: color 0.25s ease;
+}
+
+.legal-links a:hover {
+  color: #a48650;
+}

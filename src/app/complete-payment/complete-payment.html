@@ -1,0 +1,87 @@
+<div class="checkout-wrapper">
+    <div class="checkout-container">
+
+        <!-- HEADER BRANDING -->
+        <div class="brand-header">
+            <span class="sub-title">RESERVE YOUR EXPERIENCE</span>
+            <h1 class="main-title">COMPLETE RESERVATION</h1>
+            <div class="gold-divider"></div>
+        </div>
+
+        <!-- LOADING STATE -->
+        @if (isLoading()) {
+        <div class="state-card loading-card">
+            <div class="spinner"></div>
+            <p>Retrieving your reservation details...</p>
+        </div>
+        }
+
+        <!-- ERROR STATE -->
+        @if (!isLoading() && errorMessage() && !paymentSuccess()) {
+        <div class="state-card error-card">
+            <div class="error-icon">✕</div>
+            <h3>Unable to Load Reservation</h3>
+            <p>{{ errorMessage() }}</p>
+            <a routerLink="/booking" class="btn-secondary">START NEW RESERVATION</a>
+        </div>
+        }
+
+        @if (!isLoading() && paymentSuccess()) {
+      <div class="state-card success-card">
+        <div class="success-icon">✓</div>
+        <h2>DEPOSIT RECEIVED</h2>
+        <p class="success-message">
+          Your deposit payment of <strong>₦5,000</strong> has been successfully processed and your appointment is now confirmed.
+        </p>
+        <p class="email-note">
+          📩 A detailed confirmation email with your appointment summary has been sent to your inbox.
+        </p>
+        <a routerLink="/" class="btn-primary-gold">RETURN TO HOME</a>
+      </div>
+    }
+
+
+        <!-- SUCCESS CHECKOUT CARD -->
+        @if (!isLoading() && booking(); as data) {
+            @if (!paymentSuccess() && !errorMessage()) {
+
+                <div class="state-card summary-card">
+                    <div class="summary-header">
+                        <h2>RESERVATION SUMMARY</h2>
+                        <span class="ref-badge">REF #{{ data.id }}</span>
+                    </div>
+        
+                    <div class="summary-details">
+                        <div class="detail-row">
+                            <span class="label">Treatment</span>
+                            <span class="valueHighlight">{{ data.treatment_name }}</span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="label">Date</span>
+                            <span class="value">{{ data.appointment_date }}</span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="label">Time</span>
+                            <span class="value">{{ data.start_time }}</span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="label">Treatment Fee</span>
+                            <span class="value">₦{{ data.deposit_amount || data.price }}</span>
+                        </div>
+                        <div class="detail-row total-row">
+                            <span class="label">Required Deposit</span>
+                            <span class="deposit-amount">₦5,000</span>
+                        </div>
+                    </div>
+        
+                    <button type="button" class="btn-primary-gold" (click)="payWithPaystack()">
+                        PAY DEPOSIT VIA PAYSTACK
+                    </button>
+        
+                    <p class="secure-note">🔒 Guaranteed secure 256-bit encrypted transaction</p>
+                </div>
+            }
+        }
+
+    </div>
+</div>

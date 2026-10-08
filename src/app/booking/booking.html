@@ -1,0 +1,147 @@
+<section class="booking-section py-5 bg-white" id="booking">
+  <div class="container py-lg-4 max-width-800">
+    
+    <!-- Section Header -->
+    <div class="text-center mb-5">
+      <span class="section-tagline d-block mb-2">RESERVE YOUR EXPERIENCE</span>
+      <h2 class="main-heading">Book an Appointment</h2>
+    </div>
+
+    <!-- Step Indicator -->
+    @if (currentStep < 4) {
+      <div class="steps-indicator d-flex justify-content-between mb-5 px-3">
+        <div class="step-item" [class.active]="currentStep >= 1">
+          <span class="step-num">01</span>
+          <span class="step-label d-none d-sm-inline">Treatment</span>
+        </div>
+        <div class="step-line"></div>
+        <div class="step-item" [class.active]="currentStep >= 2">
+          <span class="step-num">02</span>
+          <span class="step-label d-none d-sm-inline">Date & Time</span>
+        </div>
+        <div class="step-line"></div>
+        <div class="step-item" [class.active]="currentStep >= 3">
+          <span class="step-num">03</span>
+          <span class="step-label d-none d-sm-inline">Details</span>
+        </div>
+      </div>
+    }
+
+    <!-- Multi-Step Form -->
+    <form [formGroup]="bookingForm" (ngSubmit)="onSubmit()">
+      
+      <!-- STEP 1: Select Service -->
+      @if (currentStep === 1) {
+        <div class="step-content">
+          <h4 class="step-title mb-4">Select Treatment</h4>
+          <div class="row g-3">
+            @for (service of services; track service.id) {
+              <div class="col-12">
+                <div 
+                  class="service-card p-3 border rounded-1 d-flex justify-content-between align-items-center cursor-pointer"
+                  [class.selected]="bookingForm.get('serviceId')?.value === service.id"
+                  (click)="selectService(service.id)">
+                  <div>
+                    <h5 class="service-name mb-1">{{ service.name }}</h5>
+                    <span class="service-meta text-muted fs-7">{{ service.duration }}</span>
+                  </div>
+                  <div class="service-price fw-semibold">{{ service.price }}</div>
+                </div>
+              </div>
+            }
+          </div>
+          <div class="d-flex justify-content-end mt-4">
+            <button 
+              type="button" 
+              class="btn btn-gold px-4" 
+              [disabled]="!bookingForm.get('serviceId')?.value" 
+              (click)="nextStep()">
+              Continue
+            </button>
+          </div>
+        </div>
+      }
+
+      <!-- STEP 2: Select Date & Time -->
+      @if (currentStep === 2) {
+        <div class="step-content">
+          <h4 class="step-title mb-4">Choose Date & Preferred Time</h4>
+          <div class="mb-4">
+            <label class="form-label text-muted fs-7">Select Date</label>
+            <input type="date" class="form-control luxury-input" formControlName="date">
+          </div>
+
+          <div class="mb-4">
+            <label class="form-label text-muted fs-7 mb-2">Available Time Slots</label>
+            <div class="d-flex flex-wrap gap-2">
+              @for (slot of timeSlots; track slot) {
+                <button 
+                  type="button" 
+                  class="btn btn-outline-time"
+                  [class.active]="bookingForm.get('timeSlot')?.value === slot"
+                  (click)="selectTime(slot)">
+                  {{ slot }}
+                </button>
+              }
+            </div>
+          </div>
+
+          <div class="d-flex justify-content-between mt-4">
+            <button type="button" class="btn btn-outline-secondary px-4" (click)="prevStep()">Back</button>
+            <button 
+              type="button" 
+              class="btn btn-gold px-4" 
+              [disabled]="!bookingForm.get('date')?.value || !bookingForm.get('timeSlot')?.value" 
+              (click)="nextStep()">
+              Continue
+            </button>
+          </div>
+        </div>
+      }
+
+      <!-- STEP 3: Client Information & Summary -->
+      @if (currentStep === 3) {
+        <div class="step-content">
+          <h4 class="step-title mb-4">Your Details</h4>
+          
+          <!-- Booking Summary Box -->
+          <div class="summary-box p-3 mb-4 bg-light rounded-1">
+            <h6 class="text-uppercase tracking-wider fs-7 text-muted mb-2">Booking Summary</h6>
+            <p class="mb-1 fw-medium">{{ selectedService?.name }}</p>
+            <p class="mb-0 text-muted fs-7">{{ bookingForm.get('date')?.value }} at {{ bookingForm.get('timeSlot')?.value }}</p>
+          </div>
+
+          <div class="row g-3">
+            <div class="col-md-6">
+              <label class="form-label text-muted fs-7">Full Name</label>
+              <input type="text" class="form-control luxury-input" formControlName="fullName" placeholder="Jane Doe">
+            </div>
+            <div class="col-md-6">
+              <label class="form-label text-muted fs-7">Email Address</label>
+              <input type="email" class="form-control luxury-input" formControlName="email" placeholder="jane@example.com">
+            </div>
+            <div class="col-md-12">
+              <label class="form-label text-muted fs-7">Phone Number</label>
+              <input type="tel" class="form-control luxury-input" formControlName="phone" placeholder="+1 (555) 000-0000">
+            </div>
+          </div>
+
+          <div class="d-flex justify-content-between mt-4">
+            <button type="button" class="btn btn-outline-secondary px-4" (click)="prevStep()">Back</button>
+            <button type="submit" class="btn btn-gold px-4" [disabled]="bookingForm.invalid">Confirm Reservation</button>
+          </div>
+        </div>
+      }
+
+      <!-- STEP 4: Confirmation Screen -->
+      @if (currentStep === 4) {
+        <div class="text-center py-5">
+          <i class="bi bi-check-circle-fill text-gold display-4 mb-3 d-block"></i>
+          <h3 class="main-heading mb-2">Reservation Confirmed</h3>
+          <p class="text-muted">Thank you, {{ bookingForm.get('fullName')?.value }}. We look forward to welcoming you to Luméa.</p>
+        </div>
+      }
+
+    </form>
+  </div>
+</section>

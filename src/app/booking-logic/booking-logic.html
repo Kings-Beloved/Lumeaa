@@ -1,0 +1,207 @@
+<div class="booking-wizard-container container py-5">
+
+  <!-- Header Branding Banner -->
+  <div class="text-center mb-5">
+    <span class="wizard-subtitle text-uppercase">Reserve Your Experience</span>
+    <h1 class="wizard-title mt-2">Book An Appointment</h1>
+  </div>
+
+  <!-- Editorial Step Indicator Header -->
+  <div class="wizard-steps-header d-flex justify-content-center align-items-center mb-5">
+    
+    <div class="step-item d-flex align-items-center" [class.active]="currentStep === 1" [class.completed]="currentStep > 1">
+      <span class="step-num">01</span>
+      <span class="step-label ms-2">Treatment</span>
+    </div>
+
+    <div class="step-divider" [class.completed]="currentStep > 1"></div>
+
+    <div class="step-item d-flex align-items-center" [class.active]="currentStep === 2" [class.completed]="currentStep > 2">
+      <span class="step-num">02</span>
+      <span class="step-label ms-2">Date & Time</span>
+    </div>
+
+    <div class="step-divider" [class.completed]="currentStep > 2"></div>
+
+    <div class="step-item d-flex align-items-center" [class.active]="currentStep === 3" [class.completed]="currentStep > 3">
+      <span class="step-num">03</span>
+      <span class="step-label ms-2">Details</span>
+    </div>
+
+  </div>
+
+  <form [formGroup]="bookingForm" (ngSubmit)="submitBooking()" class="wizard-form-wrapper mx-auto">
+
+    <!-- STEP 1: SELECT SERVICE -->
+    @if (currentStep === 1) {
+      <div class="step-content">
+        <h3 class="step-heading mb-4">Select Treatment</h3>
+
+        <div class="services-list mb-4">
+          @for (item of treatments(); track item.id) {
+            <div 
+              class="service-card p-4 mb-3 d-flex justify-content-between align-items-center"
+              [class.selected]="bookingForm.get('treatmentId')?.value === item.id" 
+              (click)="selectTreatment(item)">
+              <div>
+                <h4 class="service-name mb-1">{{ item.name }}</h4>
+                <p class="service-duration mb-0">{{ item.duration }} min</p>
+              </div>
+              <div class="service-price">
+                ₦{{ item.price || item.deposit_amount }}
+              </div>
+            </div>
+          }
+        </div>
+
+        <div class="mt-4 text-end">
+          <button 
+            type="button" 
+            class="btn btn-lumea px-5 text-uppercase" 
+            [disabled]="bookingForm.get('treatmentId')?.invalid"
+            (click)="nextStep()">
+            Continue
+          </button>
+        </div>
+      </div>
+    }
+
+    <!-- STEP 2: CHOOSE DATE & TIME -->
+    @if (currentStep === 2) {
+      <div class="step-content">
+        <h3 class="step-heading mb-2">Choose Date & Time</h3>
+        <p class="step-subheading mb-4">Select your preferred appointment date and available slot:</p>
+
+        <div class="row g-4 mb-4">
+          <div class="col-12 col-md-6">
+            <div class="picker-card p-4">
+              <label for="appointmentDate" class="form-label-lumea mb-3">Select Date</label>
+              <input 
+                id="appointmentDate" 
+                type="date" 
+                class="form-control form-control-lumea" 
+                [min]="minDate" 
+                [value]="selectedDate"
+                (change)="onDateSelect($event)" 
+              />
+            </div>
+          </div>
+
+          <div class="col-12 col-md-6">
+            <div class="picker-card p-4" [class.disabled-card]="!selectedDate">
+              <label class="form-label-lumea mb-3">Available Time Slots</label>
+
+              @if (!selectedDate) {
+                <p class="text-muted small mb-0 mt-2">Please pick a date first to view time slots.</p>
+              } @else {
+                <div class="time-slots-grid">
+                  @for (slot of availableTimeSlots; track slot) {
+                    <button 
+                      type="button" 
+                      class="slot-chip" 
+                      [class.selected]="selectedTimeSlot === slot"
+                      (click)="selectTimeSlot(slot)">
+                      {{ slot }}
+                    </button>
+                  }
+                </div>
+              }
+            </div>
+          </div>
+        </div>
+
+        <div class="wizard-actions d-flex justify-content-between pt-3">
+          <button type="button" class="btn btn-outline-lumea px-4 text-uppercase" (click)="prevStep()">
+            Back
+          </button>
+          <button 
+            type="button" 
+            class="btn btn-lumea px-5 text-uppercase" 
+            [disabled]="!selectedDate || !selectedTimeSlot"
+            (click)="nextStep()">
+            Next Step
+          </button>
+        </div>
+      </div>
+    }
+
+    <!-- STEP 3: CONTACT DETAILS -->
+    @if (currentStep === 3) {
+      <div class="step-content">
+        <h3 class="step-heading mb-2">Contact Details</h3>
+        <p class="step-subheading mb-4">Please fill in your information to complete your reservation:</p>
+
+        <div class="row g-3 mb-4">
+          <div class="col-md-6">
+            <label for="firstName" class="form-label-lumea">First Name</label>
+            <input type="text" id="firstName" class="form-control form-control-lumea" placeholder="Jane" formControlName="firstName">
+          </div>
+
+          <div class="col-md-6">
+            <label for="lastName" class="form-label-lumea">Last Name</label>
+            <input type="text" id="lastName" class="form-control form-control-lumea" placeholder="Doe" formControlName="lastName">
+          </div>
+
+          <div class="col-md-6">
+            <label for="phoneNumber" class="form-label-lumea">Phone Number</label>
+            <input type="tel" id="phoneNumber" class="form-control form-control-lumea" placeholder="+234..." formControlName="phoneNumber">
+          </div>
+
+          <div class="col-md-6">
+            <label for="email" class="form-label-lumea">Email Address</label>
+            <input type="email" id="email" class="form-control form-control-lumea" placeholder="jane@example.com" formControlName="email">
+          </div>
+        </div>
+
+        <div class="wizard-actions d-flex justify-content-between pt-3">
+          <button type="button" class="btn btn-outline-lumea px-4 text-uppercase" (click)="prevStep()">
+            Back
+          </button>
+          <button type="button" class="btn btn-lumea px-5 text-uppercase" [disabled]="bookingForm.invalid || isSubmitting" (click)="submitBooking()">
+            Proceed To Checkout
+          </button>
+        </div>
+      </div>
+    }
+
+    <!-- STEP 4: CONFIRMATION & PAYMENT -->
+    @if (currentStep === 4) {
+      <div class="step-content py-3">
+        <div class="summary-card p-4 p-md-5 mb-4">
+          <span class="status-badge mb-3">Reservation Logged</span>
+          <h3 class="step-heading mb-3">Appointment Summary</h3>
+
+          <div class="summary-details my-4">
+            <div class="summary-row d-flex justify-content-between py-2 border-bottom">
+              <span class="label">Client Name</span>
+              <span class="value fw-medium">{{ bookingForm.value.firstName }} {{ bookingForm.value.lastName }}</span>
+            </div>
+            <div class="summary-row d-flex justify-content-between py-2 border-bottom">
+              <span class="label">Service</span>
+              <span class="value fw-medium">{{ selectedTreatment?.name || 'Selected Treatment' }}</span>
+            </div>
+            <div class="summary-row d-flex justify-content-between py-2 border-bottom">
+              <span class="label">Date & Time</span>
+              <span class="value fw-medium">{{ bookingForm.value.bookingDateTime | date:'medium' }}</span>
+            </div>
+            <div class="summary-row d-flex justify-content-between py-2 border-bottom">
+              <span class="label">Deposit Amount</span>
+              <span class="value price-highlight">₦{{ (selectedTreatment?.price || selectedTreatment?.deposit_amount) }}</span>
+            </div>
+          </div>
+
+          @if (paymentConfirmed) {
+            <div class="alert alert-success text-center mb-0" role="alert">
+              <strong>Confirmed!</strong> Payment completed. Reference: <code>{{ paymentReference }}</code>
+            </div>
+          } @else {
+            <button type="button" class="btn btn-lumea w-100 py-3 text-uppercase" (click)="payWithPaystack()">
+              Pay Deposit via Paystack
+            </button>
+          }
+        </div>
+      </div>
+    }
+
+  </form>
+</div>

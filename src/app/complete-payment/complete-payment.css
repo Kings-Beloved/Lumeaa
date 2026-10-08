@@ -1,0 +1,202 @@
+.checkout-wrapper {
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+  background-color: #faf8f5;
+  font-family: 'Cinzel', 'Montserrat', sans-serif;
+}
+
+.checkout-container {
+  width: 100%;
+  max-width: 520px;
+}
+
+.brand-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.sub-title {
+  letter-spacing: 3px;
+  font-size: 0.75rem;
+  color: #c5a880;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.main-title {
+  font-size: 1.8rem;
+  color: #1a1a1a;
+  letter-spacing: 2px;
+  margin: 8px 0;
+  font-weight: 400;
+}
+
+.gold-divider {
+  width: 50px;
+  height: 2px;
+  background-color: #c5a880;
+  margin: 12px auto 0;
+}
+
+.state-card {
+  background: #ffffff;
+  border: 1px solid #e8e2d9;
+  border-radius: 4px;
+  padding: 32px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+  text-align: center;
+}
+
+.loading-card p {
+  color: #666;
+  font-size: 0.95rem;
+  margin-top: 15px;
+}
+
+.spinner {
+  width: 36px;
+  height: 36px;
+  border: 3px solid #f3f3f3;
+  border-top: 3px solid #c5a880;
+  border-radius: 50%;
+  margin: 0 auto;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.summary-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #f0eae1;
+  padding-bottom: 16px;
+  margin-bottom: 20px;
+}
+
+.summary-header h2 {
+  font-size: 1rem;
+  letter-spacing: 1.5px;
+  color: #1a1a1a;
+  margin: 0;
+}
+
+.ref-badge {
+  font-size: 0.75rem;
+  color: #c5a880;
+  background: #fdfbf7;
+  padding: 4px 8px;
+  border: 1px solid #ece4d8;
+}
+
+.summary-details {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-bottom: 25px;
+}
+
+.detail-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.9rem;
+}
+
+.detail-row .label {
+  color: #777;
+}
+
+.detail-row .value {
+  color: #222;
+  font-weight: 500;
+}
+
+.detail-row .valueHighlight {
+  color: #b8975a;
+  font-weight: 600;
+}
+
+.total-row {
+  border-top: 1px dashed #e5dec9;
+  padding-top: 14px;
+  margin-top: 6px;
+  align-items: center;
+}
+
+.deposit-amount {
+  font-size: 1.3rem;
+  color: #1a1a1a;
+  font-weight: 700;
+}
+
+.btn-primary-gold {
+  width: 100%;
+  padding: 14px;
+  background-color: #b8975a;
+  color: #ffffff;
+  border: none;
+  letter-spacing: 1.5px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.btn-primary-gold:hover {
+  background-color: #9e7f45;
+}
+
+.secure-note {
+  font-size: 0.75rem;
+  color: #888;
+  margin-top: 15px;
+}
+
+.success-card {
+  text-align: center;
+  padding: 40px 24px;
+}
+
+.success-icon {
+  width: 50px;
+  height: 50px;
+  background-color: #fdfbf7;
+  color: #b8975a;
+  border: 1px solid #c5a880;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  margin: 0 auto 20px;
+}
+
+.success-card h2 {
+  font-size: 1.2rem;
+  letter-spacing: 2px;
+  color: #1a1a1a;
+  margin-bottom: 12px;
+}
+
+.success-message {
+  font-size: 0.95rem;
+  color: #444;
+  line-height: 1.6;
+  margin-bottom: 16px;
+}
+
+.email-note {
+  font-size: 0.85rem;
+  color: #777;
+  background: #fdfbf7;
+  border: 1px dashed #e8e2d9;
+  padding: 12px;
+  border-radius: 4px;
+  margin-bottom: 25px;
+}

@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Montserrat:wght@300;400;500;600&display=swap');
+
+.booking-section {
+  font-family: 'Montserrat', sans-serif;
+  color: #1a1a1a;
+}
+
+.max-width-800 {
+  max-width: 720px;
+}
+
+.section-tagline {
+  font-size: 0.72rem;
+  letter-spacing: 0.25em;
+  color: #b38b38;
+  font-weight: 600;
+}
+
+.main-heading {
+  font-family: 'Cinzel', serif;
+  font-size: 2.2rem;
+  font-weight: 500;
+  color: #121212;
+}
+
+.step-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1.3rem;
+  font-weight: 500;
+}
+
+/* Step Indicators */
+.steps-indicator {
+  align-items: center;
+}
+
+.step-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  opacity: 0.4;
+  transition: opacity 0.3s ease;
+}
+
+.step-item.active {
+  opacity: 1;
+}
+
+.step-num {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  color: #b38b38;
+  font-weight: 600;
+}
+
+.step-line {
+  flex-grow: 1;
+  height: 1px;
+  background-color: #e8e5de;
+  margin: 0 16px;
+}
+
+/* Service Cards */
+.service-card {
+  border-color: #e8e5de !important;
+  transition: all 0.25s ease;
+}
+
+.service-card:hover,
+.service-card.selected {
+  border-color: #b38b38 !important;
+  background-color: #faf9f6;
+}
+
+.service-name {
+  font-family: 'Cinzel', serif;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.service-price {
+  color: #b38b38;
+}
+
+/* Custom Inputs & Buttons */
+.luxury-input {
+  border-color: #e8e5de;
+  padding: 10px 14px;
+  font-size: 0.9rem;
+  border-radius: 2px;
+}
+
+.luxury-input:focus {
+  border-color: #b38b38;
+  box-shadow: none;
+}
+
+.btn-gold {
+  background-color: #b38b38;
+  color: #ffffff;
+  border: none;
+  border-radius: 2px;
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.btn-gold:hover {
+  background-color: #8f6c26;
+  color: #ffffff;
+}
+
+.btn-outline-time {
+  border: 1px solid #e8e5de;
+  color: #333333;
+  font-size: 0.82rem;
+  padding: 8px 16px;
+  border-radius: 2px;
+  transition: all 0.2s ease;
+}
+
+.btn-outline-time:hover,
+.btn-outline-time.active {
+  background-color: #1a1a1a;
+  color: #ffffff;
+  border-color: #1a1a1a;
+}
+
+.fs-7 {
+  font-size: 0.8rem;
+}
+
+.text-gold {
+  color: #b38b38;
+}

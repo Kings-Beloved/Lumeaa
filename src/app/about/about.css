@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&display=swap');
+
+/* Section Background & Base Spacing */
+.about-section {
+  background-color: #faf9f6; /* Soft warm-tone backdrop */
+  color: #1c2738;
+}
+
+/* Left Brand Badge Column */
+.sticky-brand-col {
+  position: sticky;
+  top: 100px;
+}
+
+.section-tag {
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  letter-spacing: 3px;
+  color: #a48650;
+  font-weight: 600;
+}
+
+.about-brand-title {
+  font-family: 'Cinzel', serif;
+  font-size: 2.75rem;
+  font-weight: 500;
+  letter-spacing: 4px;
+  color: #1c2738;
+  line-height: 1;
+}
+
+.gold-accent-line {
+  width: 45px;
+  height: 2px;
+  background-color: #a48650;
+}
+
+.brand-tagline {
+  font-family: 'Cinzel', serif;
+  font-size: 0.85rem;
+  letter-spacing: 1.5px;
+  color: #666666;
+  line-height: 1.8;
+  text-transform: uppercase;
+}
+
+/* Right Content Column */
+.about-heading {
+  font-family: 'Cinzel', serif;
+  font-size: 2.1rem;
+  font-weight: 500;
+  color: #1c2738;
+  letter-spacing: 1px;
+  line-height: 1.35;
+}
+
+.highlight-italic {
+  font-style: italic;
+  font-family: Georgia, 'Times New Roman', serif;
+  color: #a48650;
+  font-weight: 400;
+}
+
+.about-lead {
+  font-size: 1.05rem;
+  color: #333333;
+  line-height: 1.8;
+  font-weight: 400;
+}
+
+.about-body {
+  font-size: 0.98rem;
+  color: #666666;
+  line-height: 1.8;
+}
+
+/* Aesthetic Quote Card Box */
+.quote-card {
+  background-color: #ffffff;
+  border-left: 3px solid #a48650;
+  border-radius: 0 12px 12px 0;
+  box-shadow: 0 10px 30px rgba(28, 39, 56, 0.04);
+}
+
+.quote-text {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 1.05rem;
+  font-style: italic;
+  color: #1c2738;
+  line-height: 1.7;
+}
+
+/* Responsive Handling */
+@media (max-width: 991px) {
+  .sticky-brand-col {
+    position: static;
+    margin-bottom: 2rem;
+  }
+  
+  .about-brand-title {
+    font-size: 2.2rem;
+  }
+  
+  .about-heading {
+    font-size: 1.75rem;
+  }
+}

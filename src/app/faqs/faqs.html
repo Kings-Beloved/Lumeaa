@@ -1,0 +1,43 @@
+
+<section class="faq-section py-5">
+  <div class="container py-4">
+    
+    <!-- Section Header -->
+    <div class="text-center mb-5">
+      <span class="faq-subtitle text-uppercase">Got Questions?</span>
+      <h2 class="faq-title mt-2">Frequently Asked Questions</h2>
+      <p class="faq-description mx-auto mt-2">
+        Everything you need to know about our treatments, booking process, and spa policies.
+      </p>
+    </div>
+
+    <!-- Accordion Wrapper -->
+    <div class="faq-accordion-wrapper mx-auto">
+      @for (item of faqs; track item.id) {
+        <div 
+          class="faq-accordion-item mb-3" 
+          [class.expanded]="openFaqId === item.id"
+          (click)="toggleFaq(item.id)">
+          
+          <div class="faq-header d-flex align-items-center justify-content-between p-4">
+            <div class="d-flex align-items-center gap-3">
+              <span class="faq-number">{{ item.id }}</span>
+              <h3 class="faq-question mb-0">{{ item.question }}</h3>
+            </div>
+            <div class="faq-icon-wrapper">
+              <span class="faq-icon"></span>
+            </div>
+          </div>
+
+          <div class="faq-body-wrapper" [class.show]="openFaqId === item.id">
+            <div class="faq-body px-4 pb-4">
+              <p class="faq-answer mb-0">{{ item.answer }}</p>
+            </div>
+          </div>
+
+        </div>
+      }
+    </div>
+
+  </div>
+</section>

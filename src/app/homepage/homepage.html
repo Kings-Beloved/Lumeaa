@@ -1,0 +1,285 @@
+<!-- <p>homepage works!</p> -->
+ <!-- <app-header></app-header> -->
+
+<main class="hero-section d-flex align-items-center">
+  <div class="container ps-lg-5">
+    <div class="hero-card">
+      <h1 class="hero-title">we treat the whole you</h1>
+      <p class="hero-subtitle">offering spa, salon, and medSPA treatments</p>
+      
+      <p class="hero-description">
+        With our comprehensive line of wellness services, we offer everything 
+        you need for complete self-care — all in one place. Your escape awaits.
+      </p>
+
+      <a href="#" class="btn btn-book-now text-uppercase">Book Now</a>
+    </div>
+  </div>
+</main>
+
+<section class="treatments-section py-5 bg-white text-center" id="treatment" >
+  <div class="container py-4">
+    <!-- Cursive Accent Heading -->
+    <span class="script-subtitle d-block mb-2">Explore our treatments</span>
+
+    <!-- Description Paragraph -->
+    <div class="row justify-content-center mb-5">
+      <div class="col-lg-8">
+        <p class="section-description">
+          Our med spa services include skin rejuvenation treatments, body contouring, dermal fillers and injectables, hair restoration, and hormone therapy. Defy age, feel great, and look amazing with our unparalleled medical spa services.
+        </p>
+      </div>
+    </div>
+
+    <!-- Main Section Title -->
+    <h2 class="section-title mb-4">WHAT WOULD YOU LIKE TO EXPLORE?</h2>
+
+    <!-- Category Filter Pills -->
+<div class="d-flex justify-content-center align-items-center gap-2 gap-md-3 mb-5 flex-wrap">
+  <button 
+    (click)="changeService('face')" 
+    class="filter-btn" 
+    [class.active]="services === 'face'">
+    Face
+  </button>
+  
+  <span class="filter-divider">/</span>
+  
+  <button 
+    (click)="changeService('skin')" 
+    class="filter-btn" 
+    [class.active]="services === 'skin'">
+    Skin
+  </button>
+  
+  <span class="filter-divider">/</span>
+  
+  <button 
+    (click)="changeService('body')" 
+    class="filter-btn" 
+    [class.active]="services === 'body'">
+    Body
+  </button>
+  
+  <span class="filter-divider">/</span>
+  
+  <button 
+    (click)="changeService('wellness')" 
+    class="filter-btn" 
+    [class.active]="services === 'wellness'">
+    Wellness
+  </button>
+</div>
+
+   @switch (services) {
+    @case ('face') {
+
+      <div class="row g-4 justify-content-center">
+        <div class="col-12 col-md-4">
+          <div class="treatment-card">
+            <div class="card-img-wrapper">
+              <img src="/spa 1.avif" alt="Face Treatment" class="img-fluid">
+            </div>
+            <h4 class="card-title mt-3">Facial Contouring</h4>
+          </div>
+        </div>
+  
+        <div class="col-12 col-md-4">
+          <div class="treatment-card">
+            <div class="card-img-wrapper">
+              <img src="/face spa.avif" alt="Skin Treatment" class="img-fluid">
+            </div>
+            <h4 class="card-title mt-3">Skin Rejuvenation</h4>
+          </div>
+        </div>
+  
+        <div class="col-12 col-md-4">
+          <div class="treatment-card">
+            <div class="card-img-wrapper">
+              <img src="/face_spa3.avif" alt="Injectables" class="img-fluid">
+            </div>
+            <h4 class="card-title mt-3">Injectables & Fillers</h4>
+          </div>
+        </div>
+      </div>
+    }
+    @case ('skin') {
+      <div class="row g-4 justify-content-center">
+        <div class="col-12 col-md-4">
+          <div class="treatment-card">
+            <div class="card-img-wrapper">
+              <img src="/microneedling.avif" alt="Microneedling" class="img-fluid">
+            </div>
+            <h4 class="card-title mt-3">MICRONEEDLING</h4>
+          </div>
+        </div>
+  
+        <div class="col-12 col-md-4">
+          <div class="treatment-card">
+            <div class="card-img-wrapper">
+              <img src="/Chemical peels.avif" alt="Chemical Peels" class="img-fluid">
+            </div>
+            <h4 class="card-title mt-3">CHEMICAL PEELS</h4>
+          </div>
+        </div>
+  
+        <div class="col-12 col-md-4">
+          <div class="treatment-card">
+            <div class="card-img-wrapper">
+              <img src="/Led Therapy.avif" alt="Led Therapy" class="img-fluid">
+            </div>
+            <h4 class="card-title mt-3">LED THERAPY</h4>
+          </div>
+        </div>
+      </div>
+    }
+    @case ('body') {
+      <div class="row g-4 justify-content-center">
+        <div class="col-12 col-md-4">
+          <div class="treatment-card">
+            <div class="card-img-wrapper">
+              <img src="/Body Contouring.avif" alt="Body Contouring" class="img-fluid">
+            </div>
+            <h4 class="card-title mt-3">BODY CONTOURING</h4>
+          </div>
+        </div>
+  
+        <div class="col-12 col-md-4">
+          <div class="treatment-card">
+            <div class="card-img-wrapper">
+              <img src="/skin tighet.jpg" alt="Skin Treatment" class="img-fluid">
+            </div>
+            <h4 class="card-title mt-3">SKIN TIGHTENING</h4>
+          </div>
+        </div>
+  
+        <div class="col-12 col-md-4">
+          <div class="treatment-card">
+            <div class="card-img-wrapper">
+              <img src="/cell treat.avif" alt="CELLULITE" class="img-fluid">
+            </div>
+            <h4 class="card-title mt-3">CELLULITE TREATMENTS</h4>
+          </div>
+        </div>
+      </div>
+    }
+
+    @case ('wellness') {
+      <div class="row g-4 justify-content-center">
+        <div class="col-12 col-md-4">
+          <div class="treatment-card">
+            <div class="card-img-wrapper">
+              <img src="/massage Therapy.avif" alt="Massage Therapy" class="img-fluid">
+            </div>
+            <h4 class="card-title mt-3">MASSAGE THERAPY</h4>
+          </div>
+        </div>
+  
+        <div class="col-12 col-md-4">
+          <div class="treatment-card">
+            <div class="card-img-wrapper">
+              <img src="/relaxation.avif" alt="Relaxation" class="img-fluid">
+            </div>
+            <h4 class="card-title mt-3">RELAXATION</h4>
+          </div>
+        </div>
+  
+        <div class="col-12 col-md-4">
+          <div class="treatment-card">
+            <div class="card-img-wrapper">
+              <img src="/wellness rit.avif" alt="Wellness Rituals" class="img-fluid">
+            </div>
+            <h4 class="card-title mt-3">WELLNESS RITUALS</h4>
+          </div>
+        </div>
+      </div>
+    }
+   }
+  </div>
+</section>
+
+
+<section class="lumea-difference-section py-5 bg-white">
+  <div class="container py-lg-5 px-4 px-lg-5">
+    <div class="row g-5 align-items-center">
+      
+      <div class="col-lg-5">
+        <span class="section-tagline d-block mb-2">THE LUMÉA DIFFERENCE</span>
+        <h2 class="main-heading mb-3">Beauty with intention.</h2>
+        <p class="section-intro mb-4">
+          Personalized treatments. Thoughtful care. Refined results.
+        </p>
+        
+        <div class="image-wrapper mt-4">
+          <img 
+            src="/spaaa.avif" 
+            alt="Luméa Consultation & Treatment" 
+            class="img-fluid luxury-img"
+          >
+        </div>
+      </div>
+
+      <!-- Right Column: Numbered Principles -->
+      <div class="col-lg-7 ps-lg-5">
+        <div class="principles-list">
+
+          <!-- Item 01 -->
+          <div class="principle-item py-4 border-top border-bottom border-light-subtle">
+            <div class="row align-items-baseline">
+              <div class="col-2 col-md-1">
+                <span class="principle-number">01</span>
+              </div>
+              <div class="col-10 col-md-11 ps-3">
+                <h3 class="principle-title">Personalized Care</h3>
+                <p class="principle-text mb-0">Treatment plans designed around you.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 02 -->
+          <div class="principle-item py-4 border-bottom border-light-subtle">
+            <div class="row align-items-baseline">
+              <div class="col-2 col-md-1">
+                <span class="principle-number">02</span>
+              </div>
+              <div class="col-10 col-md-11 ps-3">
+                <h3 class="principle-title">Modern Expertise</h3>
+                <p class="principle-text mb-0">Contemporary techniques with a thoughtful approach.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 03 -->
+          <div class="principle-item py-4 border-bottom border-light-subtle">
+            <div class="row align-items-baseline">
+              <div class="col-2 col-md-1">
+                <span class="principle-number">03</span>
+              </div>
+              <div class="col-10 col-md-11 ps-3">
+                <h3 class="principle-title">Natural-Looking Results</h3>
+                <p class="principle-text mb-0">Enhancement, not transformation.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 04 -->
+          <div class="principle-item py-4 border-bottom border-light-subtle">
+            <div class="row align-items-baseline">
+              <div class="col-2 col-md-1">
+                <span class="principle-number">04</span>
+              </div>
+              <div class="col-10 col-md-11 ps-3">
+                <h3 class="principle-title">An Elevated Experience</h3>
+                <p class="principle-text mb-0">A calm, private environment from consultation to aftercare.</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<app-faqs></app-faqs>

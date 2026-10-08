@@ -1,0 +1,265 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Montserrat:wght@300;400;500;600&display=swap');
+
+.hero-section {
+  /* Using URL-encoded space (%20) for the image path */
+  background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), 
+              url('/Spa%202.jpg') center/cover no-repeat;
+  min-height: 70vh;
+  width: 100%;
+  position: relative;
+}
+
+/* Semi-Transparent Floating Overlay Card */
+.hero-card {
+  background-color: rgba(60, 58, 54, 0.72); /* Translucent dark beige/gray tone */
+  backdrop-filter: blur(4px); /* Adds a soft premium glass effect */
+  color: #ffffff;
+  padding: 2.5rem;
+  max-width: 460px;
+  border-radius: 2px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* Typography Styling */
+.hero-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2.5rem;
+  font-weight: 400;
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+  margin-bottom: 0.5rem;
+}
+
+.hero-subtitle {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 1.25rem;
+  font-weight: 400;
+  color: #f0ece1;
+  margin-bottom: 1.25rem;
+}
+
+.hero-description {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.82rem;
+  line-height: 1.6;
+  color: #e4e0d7;
+  font-weight: 300;
+  margin-bottom: 1.75rem;
+}
+
+/* White CTA Button */
+.btn-book-now {
+  background-color: #ffffff;
+  color: #2b2b2b;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  padding: 10px 24px;
+  border-radius: 2px;
+  border: none;
+  transition: all 0.3s ease;
+}
+
+.btn-book-now:hover {
+  background-color: #f0ece1;
+  color: #000000;
+  transform: translateY(-1px);
+}
+
+/* Responsive adjustments for mobile devices */
+@media (max-width: 768px) {
+  .hero-section {
+    min-height: 55vh;
+    padding: 2rem 1rem;
+  }
+  
+  .hero-card {
+    max-width: 100%;
+    padding: 1.75rem;
+  }
+
+  .hero-title {
+    font-size: 2rem;
+  }
+}
+
+
+@import url('https://fonts.googleapis.com/css2?family=Alex+Brush&family=Cinzel:wght@500;600&family=Montserrat:wght@300;400;500&display=swap');
+
+.treatments-section {
+  font-family: 'Montserrat', sans-serif;
+  color: #2b2b2b;
+}
+
+/* Handwritten Script Subtitle */
+.script-subtitle {
+  font-family: 'Alex Brush', cursive;
+  font-size: 2.5rem;
+  color: #6c6356;
+  line-height: 1;
+}
+
+/* Description Text */
+.section-description {
+  font-size: 0.85rem;
+  line-height: 1.7;
+  color: #666666;
+  font-weight: 400;
+}
+
+/* Main Section Title */
+.section-title {
+  font-family: 'Cinzel', serif;
+  font-size: 2.1rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  color: #1a1a1a;
+}
+
+/* Filter Pill Buttons */
+.filter-btn {
+  background: transparent;
+  border: none;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #555555;
+  padding: 6px 20px;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.filter-btn:hover {
+  color: #000000;
+}
+
+/* Active Pill Style */
+.filter-btn.active {
+  background-color: #1c2738; /* Dark navy accent from reference */
+  color: #ffffff;
+  font-weight: 500;
+}
+
+/* Divider Slashes */
+.filter-divider {
+  color: #cccccc;
+  font-size: 0.9rem;
+}
+
+/* Image Card Styling */
+.card-img-wrapper {
+  overflow: hidden;
+  border-radius: 2px;
+  aspect-ratio: 4/3;
+}
+
+.card-img-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.treatment-card:hover .card-img-wrapper img {
+  transform: scale(1.04);
+}
+
+.card-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #2b2b2b;
+}
+
+
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Montserrat:wght@300;400;500;600&display=swap');
+
+.lumea-difference-section {
+  background-color: #ffffff;
+  color: #1a1a1a;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.section-tagline {
+  font-size: 0.72rem;
+  letter-spacing: 0.25em;
+  color: #b38b38;
+  font-weight: 600;
+}
+
+.main-heading {
+  font-family: 'Cinzel', serif;
+  font-size: 2.6rem;
+  font-weight: 500;
+  color: #121212;
+  line-height: 1.2;
+}
+
+.section-intro {
+  font-size: 0.95rem;
+  color: #555555;
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+.image-wrapper {
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+}
+
+.luxury-img {
+  width: 100%;
+  height: 480px;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.image-wrapper:hover .luxury-img {
+  transform: scale(1.03);
+}
+
+/* List Container - Adds top spacing to align with content */
+.principles-list {
+  margin-top: 1.5rem;
+}
+
+/* Increased vertical padding on each list item for breathing room */
+.principle-item {
+  padding-top: 2.25rem !important;
+  padding-bottom: 2.25rem !important;
+  transition: background-color 0.3s ease;
+}
+
+.principle-item:hover {
+  background-color: #faf9f6;
+}
+
+.principle-number {
+  font-family: 'Cinzel', serif;
+  font-size: 1.35rem;
+  color: #b38b38;
+  font-weight: 600;
+}
+
+.principle-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #1a1a1a;
+  margin-bottom: 0.4rem;
+  letter-spacing: 0.05em;
+}
+
+.principle-text {
+  font-size: 0.88rem;
+  color: #666666;
+  font-weight: 300;
+  line-height: 1.6;
+}
+
+.border-light-subtle {
+  border-color: #e8e5de !important;
+}

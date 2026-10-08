@@ -1,0 +1,266 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Montserrat:wght@500;600;700&display=swap');
+
+:host {
+  --gold-accent: #b38b38;
+  --gold-hover: #8f6c26;
+  --text-dark: #1a1a1a;
+  --text-muted: #555555;
+  --bg-tab-active: #e2dfd7;
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* Base Wrapper */
+.navbar-wrapper {
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+}
+
+/* Category Tab Links (Top Left) */
+.nav-tab-link {
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  font-weight: 700; /* Bolder text */
+  color: var(--text-dark);
+  text-decoration: none;
+  padding: 7px 14px;
+  background-color: #f2efe9;
+  border-radius: 3px;
+  transition: all 0.2s ease;
+}
+
+.nav-tab-link:hover,
+.nav-tab-link.active {
+  background-color: var(--bg-tab-active);
+  color: #000000;
+}
+
+/* Brand Logo (Lumea) */
+.brand-title {
+  font-family: 'Cinzel', serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: var(--text-dark);
+  line-height: 1;
+}
+
+.brand-subtitle {
+  font-size: 0.58rem;
+  letter-spacing: 0.3em;
+  color: var(--text-muted);
+  margin-top: 4px;
+  font-weight: 600;
+}
+
+/* Action Buttons */
+.btn-gold {
+  background-color: var(--gold-accent);
+  color: #ffffff;
+  border: 1px solid var(--gold-accent);
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  border-radius: 2px;
+  transition: all 0.25s ease;
+}
+
+.btn-gold:hover {
+  background-color: var(--gold-hover);
+  border-color: var(--gold-hover);
+  color: #ffffff;
+}
+
+.btn-outline-gold {
+  background-color: transparent;
+  color: var(--gold-accent);
+  border: 1.5px solid var(--gold-accent);
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  border-radius: 2px;
+  transition: all 0.25s ease;
+}
+
+.btn-outline-gold:hover {
+  background-color: var(--gold-accent);
+  color: #ffffff;
+}
+
+/* Sub-Navigation Links */
+.nav-links-bar {
+  background-color: #ffffff;
+}
+
+.subnav-link {
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  font-weight: 700; /* Increased bold weight for visibility */
+  color: var(--text-dark);
+  text-decoration: none;
+  transition: color 0.2s ease;
+  position: relative;
+  padding-bottom: 3px;
+}
+
+.subnav-link:hover {
+  color: var(--gold-accent);
+}
+
+.subnav-link::after {
+  content: '';
+  position: absolute;
+  width: 0%;
+  height: 2px; /* Slightly thicker hover line */
+  bottom: 0;
+  left: 0;
+  background-color: var(--gold-accent);
+  transition: width 0.3s ease;
+}
+
+.subnav-link:hover::after {
+  width: 100%;
+}
+
+/* Brand Typography */
+.brand-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1.4rem;
+  letter-spacing: 3px;
+  color: #1a1a1a;
+  font-weight: 600;
+  line-height: 1;
+}
+
+.brand-subtitle {
+  font-size: 0.55rem;
+  letter-spacing: 2px;
+  color: #c5a880;
+  margin-top: 3px;
+}
+
+/* Gold Theme Buttons */
+.btn-gold {
+  background-color: #b8975a;
+  color: #ffffff;
+  border: 1px solid #b8975a;
+  font-size: 0.75rem;
+  letter-spacing: 1px;
+  border-radius: 2px;
+  transition: all 0.2s ease;
+}
+
+.btn-gold:hover {
+  background-color: #9e7f45;
+  color: #ffffff;
+}
+
+.btn-outline-gold {
+  border: 1px solid #c5a880;
+  color: #c5a880;
+  font-size: 0.75rem;
+  letter-spacing: 1px;
+  border-radius: 2px;
+}
+
+.icon-button:focus {
+  box-shadow: none;
+}
+
+/* Desktop Sub-nav Links */
+.subnav-link {
+  color: #333;
+  text-decoration: none;
+  font-size: 0.8rem;
+  letter-spacing: 1.5px;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.subnav-link:hover, .subnav-link.active {
+  color: #b8975a;
+}
+
+/* Desktop Category Links */
+.nav-tab-link {
+  font-size: 0.7rem;
+  color: #777;
+  text-decoration: none;
+  padding: 4px 8px;
+  letter-spacing: 1px;
+}
+
+.nav-tab-link.active {
+  color: #1a1a1a;
+  font-weight: 600;
+  border-bottom: 2px solid #b8975a;
+}
+
+/* Mobile Dropdown Styling */
+@media (max-width: 991.98px) {
+  .brand-title {
+    font-size: 1.2rem;
+    letter-spacing: 2px;
+  }
+
+  .brand-subtitle {
+    font-size: 0.5rem;
+  }
+
+  .mobile-nav-link {
+    color: #1a1a1a !important;
+    font-size: 0.85rem;
+    letter-spacing: 1.5px;
+    font-weight: 500;
+    padding: 10px 0;
+    border-bottom: 1px solid #f8f5f0;
+  }
+
+  .mobile-nav-link:hover {
+    color: #b8975a !important;
+  }
+
+  .btn-gold-pill {
+    background-color: #b8975a;
+    color: #ffffff;
+    font-size: 0.65rem;
+    letter-spacing: 1px;
+    border-radius: 20px;
+    font-weight: 600;
+  }
+
+  .btn-outline-pill {
+    border: 1px solid #e8e2d9;
+    color: #666;
+    font-size: 0.65rem;
+    letter-spacing: 1px;
+    border-radius: 20px;
+    font-weight: 500;
+  }
+
+  .divider-line {
+    height: 1px;
+    background-color: #f0eae1;
+    width: 100%;
+  }
+}
+
+/* Hamburger Custom Styling */
+.mobile-hamburger-toggle {
+  background: transparent !important;
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.mobile-hamburger-toggle svg {
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.mobile-hamburger-toggle:hover svg,
+.mobile-hamburger-toggle:active svg {
+  opacity: 0.8;
+  transform: scale(1.05);
+}

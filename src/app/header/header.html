@@ -1,0 +1,100 @@
+<header class="navbar-wrapper border-bottom sticky-top bg-white">
+  <div class="container-fluid px-3 px-lg-5 py-2">
+    <div class="row align-items-center">
+      
+      <!-- Desktop Category Tabs -->
+      <div class="col-lg-4 d-none d-lg-flex align-items-center gap-1 nav-tabs-group">
+        <a href="#" class="nav-tab-link active">SPA + SALON</a>
+        <a href="#" class="nav-tab-link">MED SPA</a>
+        <a href="#" class="nav-tab-link">PRODUCT</a>
+      </div>
+
+      <!-- Center / Left Logo -->
+      <div class="col-8 col-lg-4 text-start text-lg-center">
+        <a routerLink="/" class="brand-logo text-decoration-none">
+          <span class="brand-title">LUMEA</span>
+          <span class="brand-subtitle d-block">SPA &bull; MEDSPA &bull; BEAUTY</span>
+        </a>
+      </div>
+
+      <!-- Right Side Actions & Hamburger -->
+      <div class="col-4 col-lg-4 d-flex justify-content-end align-items-center gap-2">
+        <button routerLink="Bookings" routerLinkActive="active" class="btn btn-gold btn-sm px-3 text-uppercase fw-bold d-none d-md-inline-block">
+          Book Now
+        </button>
+        <button class="btn btn-outline-gold btn-sm px-3 text-uppercase fw-bold d-none d-md-inline-block">
+          Contact Us
+        </button>
+
+        <!-- Inline SVG Hamburger Icon (Matches PageStack Amber Color) -->
+        <button 
+          class="mobile-hamburger-toggle d-lg-none" 
+          type="button" 
+          data-bs-toggle="collapse" 
+          data-bs-target="#mobileNav" 
+          aria-controls="mobileNav" 
+          aria-expanded="false" 
+          aria-label="Toggle navigation">
+          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#b8975a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- LOWER NAVIGATION BAR (Desktop Only) -->
+  <nav class="nav-links-bar d-none d-lg-block border-top py-2">
+    <div class="container d-flex justify-content-center align-items-center gap-4">
+      <a routerLink="/" fragment="treatment" class="subnav-link">SPA TREATMENT</a>
+      <a routerLink="saloon" routerLinkActive="active" class="subnav-link">SALOON SERVICES</a>
+      <a routerLink="about" routerLinkActive="active" class="subnav-link">ABOUT</a>
+      <a href="#" class="subnav-link">RESULT</a>
+      <a href="#" class="subnav-link">REVIEWS</a>
+      <a routerLink="faqs" routerLinkActive="active" class="subnav-link">FAQS</a>
+    </div>
+  </nav>
+
+  <!-- MOBILE COLLAPSIBLE DROPDOWN MENU -->
+  <div class="collapse navbar-collapse d-lg-none bg-white border-top shadow-sm" id="mobileNav">
+    <div class="p-4">
+      <div class="mobile-cat-pills d-flex gap-2 mb-3">
+        <a href="#" class="btn btn-sm btn-gold-pill flex-fill active">SPA + SALON</a>
+        <a href="#" class="btn btn-sm btn-outline-pill flex-fill">MED SPA</a>
+        <a href="#" class="btn btn-sm btn-outline-pill flex-fill">PRODUCT</a>
+      </div>
+
+      <div class="divider-line mb-3"></div>
+
+      <ul class="nav flex-column gap-1 text-start">
+        <li class="nav-item">
+          <a class="nav-link mobile-nav-link" routerLink="/" fragment="treatment">SPA TREATMENT</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link mobile-nav-link" routerLink="saloon" routerLinkActive="active">SALOON SERVICES</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link mobile-nav-link" routerLink="about" routerLinkActive="active">ABOUT</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link mobile-nav-link" href="#">RESULT</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link mobile-nav-link" href="#">REVIEWS</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link mobile-nav-link" routerLink="faqs" routerLinkActive="active">FAQS</a>
+        </li>
+      </ul>
+
+      <div class="pt-3 mt-2 border-top">
+        <button routerLink="Bookings" class="btn btn-gold w-100 py-2 text-uppercase fw-bold">
+          BOOK NOW
+        </button>
+      </div>
+    </div>
+  </div>
+</header>
