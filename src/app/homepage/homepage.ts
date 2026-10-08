@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
 import { FAQs } from '../faqs/faqs';
+import { RouterLink, RouterLinkActive } from '@angular/router';
 
 @Component({
-  imports: [FAQs],
+  imports: [FAQs, RouterLink, RouterLinkActive],
   selector: 'app-homepage',
   styleUrl: './homepage.css',
   templateUrl: './homepage.html',
