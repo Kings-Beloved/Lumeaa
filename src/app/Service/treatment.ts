@@ -6,6 +6,6 @@ export class Treatment {
     private http = inject(HttpClient);
 
     getTreatment(){
-        return this.http.get('http://localhost/Lumea/treatment/getTreatment');
+        return this.http.get('https://lumea-uoet.onrender.com/treatment/getTreatment');
     }
 }
