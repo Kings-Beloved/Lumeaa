@@ -4,7 +4,7 @@ import { inject, Service } from '@angular/core';
 @Service()
 export class Auth {
 private http = inject(HttpClient);
-  private baseUrl = 'http://lumea-uoet.onrender.com/auth';
+  private baseUrl = 'https://lumea-uoet.onrender.com/auth';
 
   createCustomer(customerData: any) {
     return this.http.post(`${this.baseUrl}/createCustomer`, customerData);
