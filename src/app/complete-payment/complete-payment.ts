@@ -38,7 +38,7 @@ export class CompletePayment implements OnInit {
   }
 
   fetchBookingDetails(reference: string, token: string): void {
-    const url = `http://https://lumeaa-uoet.onrender.com/get-booking?reference=${reference}&token=${token}`;
+    const url = `https://lumeaa-uoet.onrender.com/get-booking?reference=${reference}&token=${token}`;
 
     this.http.get<any>(url).subscribe({
       next: (res) => {
@@ -90,7 +90,7 @@ export class CompletePayment implements OnInit {
   this.isLoading.set(true);
 
   // Post to your established Auth.php route
-  this.http.post<any>('http://https://lumeaa-uoet.onrender.com/verify-payment', {
+  this.http.post<any>('https://lumeaa-uoet.onrender.com/verify-payment', {
     paystack_reference: paystackRef,
     appointment_id: appointmentId
   }).subscribe({
